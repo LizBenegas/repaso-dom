@@ -11,10 +11,9 @@ body {
 
 .dark-mode {
     background-color: #121212;
-    color: #383737;
+    color: #524f4f;
     font-family: cursive;
 }
-
 
 .navbar {
     display: flex;
@@ -23,25 +22,44 @@ body {
     padding: 10px;
     background-color: #333;
     color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.navbar.scrolled {
+    background-color: #b8a0a0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.navbar.scrolling {
+    background-color: #555;
+}
+
+
 .menu-icon {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 .menu-icon span {
     height: 3px;
     width: 25px;
-    background-color: #ffffff9f;
+    background-color: #ffffffce;
     margin: 4px 0;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
@@ -49,53 +67,58 @@ body {
 }
 
 .nav-links a {
-    color: #fff;
+    color: #f7f0f0;
     text-decoration: none;
+    padding: 10px;
+    display: block;
 }
-
+/* Responsive Navbar */
 @media (max-width: 768px) {
     .menu-icon {
         display: flex;
     }
-     .flecha {
-        font-size: 1.5rem;
-    }
+
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 18px;
+        top: 30px;
         left: 0;
         background-color: #333;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.5s ease-out;
     }
+
     .nav-links.active {
         display: flex;
         max-height: 500px;
     }
+
     .menu-icon.open span:nth-child(1) {
-        transform: rotate(45deg); 
-        margin-top: 7px; 
-        
+        transform: rotate(45deg);
+        margin-top: 5px;
     }
 
     .menu-icon.open span:nth-child(2) {
-        opacity: 0; 
+        opacity: 0;
     }
 
     .menu-icon.open span:nth-child(3) {
         transform: rotate(-45deg);
-        margin-bottom: 2px; 
-        margin-top: -16px;
-      
+        margin-top: -17px;
+    }
+
+    .flecha {
+        font-size: 1.5rem;
+    }
+     #section1 {
+        margin-top: 50px; /* Baja la sección 1 por 10px */
     }
 }
 
-
-
+/* Accordion */
 .accordion-item {
     border-bottom: 1px solid #ccc;
 }
@@ -116,30 +139,7 @@ body {
     display: block;
 }
 
-.fixed-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.fixed-nav.scrolled {
-    background-color: #222;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.fixed-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
+/* Gallery */
 .gallery {
     display: grid;
     gap: 10px;
@@ -155,7 +155,11 @@ body {
 .gallery img:hover {
     transform: scale(1.05);
 }
+#section1{
+    margin-top: 55px;
+}
 
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -168,21 +172,20 @@ body {
     backdrop-filter: blur(10px);
     justify-content: center;
     align-items: center;
-    transition: opacity 0.3s ease; 
-
+    transition: opacity 0.3s ease;
 }
 
 .modal.active {
     display: flex;
     opacity: 1;
 }
+
 .modal img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
     box-shadow: 0 0 20px black;
-    transition: transform 0.3s ease; 
-
+    transition: transform 0.3s ease;
 }
 
 .cerrar {
@@ -193,13 +196,14 @@ body {
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 1100; 
-    transition: color 0.3s ease; 
+    z-index: 1100;
+    transition: color 0.3s ease;
 }
 
 .cerrar:hover {
-    color: #bbb; 
+    color: #bbb;
 }
+
 .flecha {
     position: absolute;
     top: 50%;
@@ -219,6 +223,7 @@ body {
     right: 10px;
 }
 
+/* Gallery Layouts */
 @media (min-width: 600px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
@@ -231,13 +236,14 @@ body {
     }
 }
 
+/* Dark Mode Toggle */
 .dark-mode-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
     padding: 10px;
     background-color: #333;
-    color: #fff;
+    color: #f0f0f0;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
