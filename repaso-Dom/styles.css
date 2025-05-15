@@ -1,0 +1,248 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #383737;
+    font-family: cursive;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.menu-icon span {
+    height: 3px;
+    width: 25px;
+    background-color: #ffffff9f;
+    margin: 4px 0;
+    transition: all 0.3s ease; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+     .flecha {
+        font-size: 1.5rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 18px;
+        left: 0;
+        background-color: #333;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+    .nav-links.active {
+        display: flex;
+        max-height: 500px;
+    }
+    .menu-icon.open span:nth-child(1) {
+        transform: rotate(45deg); 
+        margin-top: 7px; 
+        
+    }
+
+    .menu-icon.open span:nth-child(2) {
+        opacity: 0; 
+    }
+
+    .menu-icon.open span:nth-child(3) {
+        transform: rotate(-45deg);
+        margin-bottom: 2px; 
+        margin-top: -16px;
+      
+    }
+}
+
+
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-header {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.accordion-content.active {
+    display: block;
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.fixed-nav.scrolled {
+    background-color: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease; 
+
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    transition: transform 0.3s ease; 
+
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100; 
+    transition: color 0.3s ease; 
+}
+
+.cerrar:hover {
+    color: #bbb; 
+}
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+.flecha.izquierda {
+    left: 10px;
+}
+
+.flecha.derecha {
+    right: 10px;
+}
+
+@media (min-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555;
+}

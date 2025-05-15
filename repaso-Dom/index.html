@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso DOM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Hamburger Menu -->
+    <nav class="navbar">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <!-- Accordion Section -->
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="section1">Section 1</h2>
+            <div class="accordion-content">
+                <p>section 1.</p>
+            </div>
+            <div class="gallery">
+                <img src="https://thypix.com/wp-content/uploads/2018/05/Sommerlandschaft-Bilder-30.jpg" alt="Image 1">
+                <img src="https://th.bing.com/th/id/R.965a060091093a9428f3ddf9a3380dc6?rik=z1DyNJw7RppLzg&riu=http%3a%2f%2fwww.v3wall.com%2fwallpaper%2f1680_1050%2f1005%2f1680_1050_201005041215072182354.jpg&ehk=NrhX477d3t1SKFUI4PfwmIkBjtPXLjzVU8%2bo3w46BkE%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Image 2">
+                <img src="https://wallup.net/wp-content/uploads/2016/02/18/286966-nature-photography.jpg" alt="Image 3">
+                <img src="https://th.bing.com/th/id/R.2a06f4d02a69584c774b28ee70df3f25?rik=XT1MNvVcS44kWg&riu=http%3a%2f%2feskipaper.com%2fimages%2fnature-27.jpg&ehk=LY39AAHbOwiAg9rcwkGtL1FwCVWrT4gYRYD0rAL76dw%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Image 4">
+                <img src="https://th.bing.com/th/id/R.c21c3079c9cd1685f9d38707e3c80751?rik=yI7%2fnFLVaxPUcw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-pz8wiTcbEbg%2fUzXaZUw5oYI%2fAAAAAAACLjk%2fvDdjl3eajU4%2fs1600%2fpaisajes-de-nuestra-naturaleza-imagenes-de-cascadas-flores-landscapes-free-photos%2b(5).jpg&ehk=hcREVYjtm0KyloU2NZGZYsHZD3fU3Rj3gWp1yxeaAFI%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Image 5">
+                <img src="https://png.pngtree.com/background/20230412/original/pngtree-nature-forest-sun-ecology-picture-image_2394782.jpg"
+                    alt="Image 6">
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="section2">Section 2</h2>
+            <div class="accordion-content">
+                <p>section 2.</p>
+            </div>
+            <div class="gallery">
+                <img src="https://thypix.com/wp-cnac.navbarontent/uploads/2018/05/Sommerlandschaft-Bilder-30.jpg" alt="Image 1">
+                <img src="https://th.bing.com/th/id/R.965a060091093a9428f3ddf9a3380dc6?rik=z1DyNJw7RppLzg&riu=http%3a%2f%2fwww.v3wall.com%2fwallpaper%2f1680_1050%2f1005%2f1680_1050_201005041215072182354.jpg&ehk=NrhX477d3t1SKFUI4PfwmIkBjtPXLjzVU8%2bo3w46BkE%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Image 2">
+                <img src="https://wallup.net/wp-content/uploads/2016/02/18/286966-nature-photography.jpg" alt="Image 3">
+                <img src="https://th.bing.com/th/id/R.2a06f4d02a69584c774b28ee70df3f25?rik=XT1MNvVcS44kWg&riu=http%3a%2f%2feskipaper.com%2fimages%2fnature-27.jpg&ehk=LY39AAHbOwiAg9rcwkGtL1FwCVWrT4gYRYD0rAL76dw%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Image 4">
+                <img src="https://th.bing.com/th/id/R.c21c3079c9cd1685f9d38707e3c80751?rik=yI7%2fnFLVaxPUcw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-pz8wiTcbEbg%2fUzXaZUw5oYI%2fAAAAAAACLjk%2fvDdjl3eajU4%2fs1600%2fpaisajes-de-nuestra-naturaleza-imagenes-de-cascadas-flores-landscapes-free-photos%2b(5).jpg&ehk=hcREVYjtm0KyloU2NZGZYsHZD3fU3Rj3gWp1yxeaAFI%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Image 5">
+                <img src="https://png.pngtree.com/background/20230412/original/pngtree-nature-forest-sun-ecology-picture-image_2394782.jpg"
+                    alt="Image 6">
+            </div>
+        </div>
+        <div class="accordion-item" id="section3">
+            <h2 class="accordion-header">Section 3</h2>
+            <div class="accordion-content">
+                <p> section 3.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="miModal" class="modal" onclick="cerrarModal()">
+        <span class="cerrar" onclick="event.stopPropagation(); cerrarModal()">×</span>
+        <img id="imagenAmpliada">
+    </div>
+    <div class="gallery">
+        <img src="https://thypix.com/wp-content/uploads/2018/05/Sommerlandschaft-Bilder-30.jpg" alt="Image 1">
+        <img src="https://th.bing.com/th/id/R.965a060091093a9428f3ddf9a3380dc6?rik=z1DyNJw7RppLzg&riu=http%3a%2f%2fwww.v3wall.com%2fwallpaper%2f1680_1050%2f1005%2f1680_1050_201005041215072182354.jpg&ehk=NrhX477d3t1SKFUI4PfwmIkBjtPXLjzVU8%2bo3w46BkE%3d&risl=&pid=ImgRaw&r=0"
+            alt="Image 2">
+        <img src="https://wallup.net/wp-content/uploads/2016/02/18/286966-nature-photography.jpg" alt="Image 3">
+        <img src="https://th.bing.com/th/id/R.2a06f4d02a69584c774b28ee70df3f25?rik=XT1MNvVcS44kWg&riu=http%3a%2f%2feskipaper.com%2fimages%2fnature-27.jpg&ehk=LY39AAHbOwiAg9rcwkGtL1FwCVWrT4gYRYD0rAL76dw%3d&risl=&pid=ImgRaw&r=0"
+            alt="Image 4">
+        <img src="https://th.bing.com/th/id/R.c21c3079c9cd1685f9d38707e3c80751?rik=yI7%2fnFLVaxPUcw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-pz8wiTcbEbg%2fUzXaZUw5oYI%2fAAAAAAACLjk%2fvDdjl3eajU4%2fs1600%2fpaisajes-de-nuestra-naturaleza-imagenes-de-cascadas-flores-landscapes-free-photos%2b(5).jpg&ehk=hcREVYjtm0KyloU2NZGZYsHZD3fU3Rj3gWp1yxeaAFI%3d&risl=&pid=ImgRaw&r=0"
+            alt="Image 5">
+        <img src="https://png.pngtree.com/background/20230412/original/pngtree-nature-forest-sun-ecology-picture-image_2394782.jpg"
+            alt="Image 6">
+    </div>
+
+
+
+    <!-- Dark Mode Button -->
+    <button class="dark-mode-toggle">Modo oscuro</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
